@@ -38,6 +38,13 @@ export default class App extends Component {
     })
   }
 
+  handleDelete = (id) => {
+    const mapping = this.state.items.filter(item => item.id !== id)
+    this.setState({
+      items:mapping
+    })
+  }
+
 
   render() {
     return (
@@ -49,7 +56,11 @@ export default class App extends Component {
            handleChange={this.handleChange}
            handleSubmit={this.handleSubmit}
           />
-          <TodoList items={this.state.items} clearList={this.clearList} />
+          <TodoList 
+            items={this.state.items}
+            clearList={this.clearList}
+            handleDelete={this.handleDelete}
+          />
          </div>
         </div>
       </div>
