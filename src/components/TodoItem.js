@@ -5,7 +5,7 @@ export default class TodoItem extends Component {
     render() {
         return (
             <div>
-         Hello Todo
+         Todo item here
             </div>
         )
     }

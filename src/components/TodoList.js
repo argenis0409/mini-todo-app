@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import TodoItem from "./TodoItem";
 
 export default class TodoList extends Component {
     render() {
         return (
             <div>
-                Hello Todo TodoList
+              <h1>Todo List here</h1>
+              <TodoItem />
             </div>
         )
     }
