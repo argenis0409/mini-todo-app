@@ -20,7 +20,7 @@ export default class App extends Component {
 
    const newItem = {
      id: this.state.id,
-     item: this.state.item
+     title: this.state.item
    }
 
    const newItems = [...this.state.items,newItem]
@@ -30,6 +30,12 @@ export default class App extends Component {
      id: uuid(),
      edit: false
    })
+  }
+
+  clearList = () => {
+    this.setState({
+      items:[]
+    })
   }
 
 
@@ -43,7 +49,7 @@ export default class App extends Component {
            handleChange={this.handleChange}
            handleSubmit={this.handleSubmit}
           />
-          <TodoList items={this.state.items} />
+          <TodoList items={this.state.items} clearList={this.clearList} />
          </div>
         </div>
       </div>
