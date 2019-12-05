@@ -3,20 +3,19 @@ import React, { Component } from 'react';
 export default class Todo extends Component {
 
     render() {
+        const {item, handleChange} = this.props;
         return (
         <div className='card card-body my-3'>
            <form>
                <div className='input-group'>
                 <div className='input-group-prepend'>
                 <div className='input-group-text bg-primary text-white'>
-                <i className='fas fa-book'></i>
+                <i className='fas fa-clipboard-list'></i>
                 </div>
                 </div>
-
-                <input type='text' className='form-control' placeholder='add item here' />
-
+                <input type='text' className='form-control' placeholder='add item here' value={item} onChange={handleChange} />
+               <button type='submit' className='btn btn-outline-primary'>Add Item</button>
                </div>
-               <button type='submit' className='btn btn-block btn-outline-primary mt-2'>Add Item</button>
            </form>
         </div>
         )
