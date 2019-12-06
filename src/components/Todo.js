@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Todo extends Component {
 
     render() {
-        const {item, handleChange, handleSubmit} = this.props;
+        const {item, handleChange, handleSubmit, edit} = this.props;
         return (
         <div className='card card-body my-3'>
            <form onSubmit={handleSubmit}>
@@ -14,7 +14,7 @@ export default class Todo extends Component {
                 </div>
                 </div>
                 <input type='text' className='form-control' placeholder='add item here' value={item} onChange={handleChange} />
-               <button type='submit' className='btn btn-outline-primary'>Add Item</button>
+               <button type='submit' className={edit ? 'btn btn-outline-success' : 'btn btn-outline-primary'}>{edit ? 'editing item' : 'add item'}</button>
                </div>
            </form>
         </div>

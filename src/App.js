@@ -45,6 +45,19 @@ export default class App extends Component {
     })
   }
 
+  handleEdit = id => {
+    const mapping = this.state.items.filter(item => item.id !== id)
+
+     const netItem = this.state.items.find(item => item.id === id);
+
+    this.setState({
+      items:mapping,
+      item:netItem.title,
+      edit: true,
+      id:id
+    })
+  }
+
 
   render() {
     return (
@@ -55,11 +68,13 @@ export default class App extends Component {
           <Todo item={this.state.item}
            handleChange={this.handleChange}
            handleSubmit={this.handleSubmit}
+           edit={this.state.edit}
           />
           <TodoList 
             items={this.state.items}
             clearList={this.clearList}
             handleDelete={this.handleDelete}
+            handleEdit={this.handleEdit}
           />
          </div>
         </div>

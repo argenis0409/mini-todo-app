@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 
 export default class TodoList extends Component {
     render() {
-        const { items, clearList, handleDelete } = this.props;
+        const { items, clearList, handleDelete, handleEdit } = this.props;
         return (
           <ul className='list-group'>
               <h2 className='text-capitalize text-center'>I Want To...</h2>
@@ -12,6 +12,7 @@ export default class TodoList extends Component {
                       return(
                      <TodoItem key={item.id} title={item.title}
                      handleDelete={()=> handleDelete(item.id)}
+                     handleEdit={()=> handleEdit(item.id)}
                      />
                       )
                   })
